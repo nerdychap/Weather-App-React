@@ -83,7 +83,7 @@ class Car extends React.Component {
 			<div>{this.state.city}, {this.state.country}</div>
 			<div>{this.state.description}</div>
 			<div>Min: {this.state.minTemp} °C</div> 
-			<div id="ave">Actu: {this.state.aveTemp} °C</div> 
+			<div id="ave">Actual: {this.state.aveTemp} °C</div> 
 			<div>Max: {this.state.maxTemp} °C</div> 
 		</div>
 		);
