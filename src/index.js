@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
 
-
 class Car extends React.Component {
 		constructor(props){
 			super(props);
