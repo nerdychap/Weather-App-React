@@ -74,7 +74,7 @@ class Car extends React.Component {
 		<div>
 			<button onClick={this.location}>Local Weather</button>
 			<div id="message"></div>
-			<form name="myCity" onSubmit={this.enteredCity} netlify>
+			<form name="myCity" onSubmit={this.enteredCity} method="POST" netlify>
 			<input type="text" onChange={this.stater}/>
 			<input type="submit" value="Enter"/>
 			</form>
