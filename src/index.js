@@ -72,7 +72,7 @@ class Car extends React.Component {
 	render(){
 		var img = "";
 		return (
-		<div>
+		<div onLoad={this.location}>
 			<button onClick={this.location}>Local Weather</button>
 			<div id="message"></div>
 			<form onSubmit={this.enteredCity}>
