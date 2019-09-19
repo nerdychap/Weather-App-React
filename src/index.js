@@ -30,7 +30,7 @@ class Car extends React.Component {
 					return resp.json();
 				}).then(function(ans){ 
 				this.setState({
-					city: ans.name,
+					city: ans.name + ', ',
 					country: ans.sys.country,
 					img: 'https://openweathermap.org/img/wn/' + ans.weather[0].icon + '@2x.png',
 					description: ans.weather[0].description,
@@ -56,7 +56,7 @@ class Car extends React.Component {
 			return resp.json();
 			}).then(function(ans){ 
 				this.setState({
-					city: ans.name,
+					city: ans.name + ', ',
 					country: ans.sys.country,
 					img: 'https://openweathermap.org/img/wn/' + ans.weather[0].icon + '@2x.png',
 					description: ans.weather[0].description,
