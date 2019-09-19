@@ -15,8 +15,9 @@ class Car extends React.Component {
 				aveTemp: 0,
 				maxTemp: 0
 			};
+			this.location = this.location.bind(this);
 		}
-		location = () => {
+		location() {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition((position) => {
 				var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude.toPrecision(4) + '&lon=' + position.coords.longitude.toPrecision(4)  + '&units=metric&APPID=75500792ea7488c01a878f05c8adf1d9';
@@ -27,7 +28,7 @@ class Car extends React.Component {
 					cache: 'default' };	
 				fetch(url, myInit).then(function(resp){
 					return resp.json();
-				}).then(function(ans){ 
+				}).then((ans)=>{ 
 				this.setState({
 					city: ans.name + ', ',
 					country: ans.sys.country,
@@ -37,7 +38,7 @@ class Car extends React.Component {
 					aveTemp: (ans.main.temp).toPrecision(2),
 					maxTemp: (ans.main.temp_max).toPrecision(2)
 				});
-			}.bind(this));
+			});
 				});
 			} else {
 				document.getElementById("message").innerHTML = "Geolocationis not supported by this browser";
