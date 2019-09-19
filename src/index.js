@@ -79,7 +79,7 @@ class Car extends React.Component {
 			<input type="text" onChange={this.stater}/>
 			<input type="submit" value="Enter"/>
 			</form>
-			<div><img src={this.state.img} alt="icon"/></div>
+			<div><img src={this.state.img}/></div>
 			<div>{this.state.city}, {this.state.country}</div>
 			<div>{this.state.description}</div>
 			<div>Min: {this.state.minTemp} °C</div> 
