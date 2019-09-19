@@ -44,7 +44,7 @@ class Car extends React.Component {
 			}
 		};
 		enteredCity = (event) => {
-			//event.preventDefault();
+			event.preventDefault();
 			var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + this.state.locus + '&units=metric&APPID=75500792ea7488c01a878f05c8adf1d9';
 			var myHeaders = new Headers();
 		    var myInit = { method: 'GET',
@@ -74,7 +74,7 @@ class Car extends React.Component {
 		<div>
 			<button onClick={this.location}>Local Weather</button>
 			<div id="message"></div>
-			<form name="myCity" onSubmit={this.enteredCity} method="POST" action="https://weatherreact.netlify.com/" netlify>
+			<form onSubmit={this.enteredCity} netlify>
 			<input type="text" onChange={this.stater}/>
 			<input type="submit" value="Enter"/>
 			</form>
