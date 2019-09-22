@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
 
-
 class Car extends React.Component {
 		constructor(props){
 			super(props);
@@ -28,9 +27,9 @@ class Car extends React.Component {
 					cache: 'default' };	
 				fetch(url, myInit).then(function(resp){
 					return resp.json();
-				}).then(function(ans){ 
+				}).then((ans)=>{ 
 				this.setState({
-					city: ans.name,
+					city: ans.name + ', ',
 					country: ans.sys.country,
 					img: 'https://openweathermap.org/img/wn/' + ans.weather[0].icon + '@2x.png',
 					description: ans.weather[0].description,
@@ -38,7 +37,7 @@ class Car extends React.Component {
 					aveTemp: (ans.main.temp).toPrecision(2),
 					maxTemp: (ans.main.temp_max).toPrecision(2)
 				});
-			}.bind(this));
+			});
 				});
 			} else {
 				document.getElementById("message").innerHTML = "Geolocationis not supported by this browser";
@@ -56,7 +55,7 @@ class Car extends React.Component {
 			return resp.json();
 			}).then(function(ans){ 
 				this.setState({
-					city: ans.name,
+					city: ans.name + ', ',
 					country: ans.sys.country,
 					img: 'https://openweathermap.org/img/wn/' + ans.weather[0].icon + '@2x.png',
 					description: ans.weather[0].description,
@@ -75,12 +74,12 @@ class Car extends React.Component {
 		<div>
 			<button onClick={this.location}>Local Weather</button>
 			<div id="message"></div>
-			<form onSubmit={this.enteredCity}>
+			<form onSubmit={this.enteredCity} netlify>
 			<input type="text" onChange={this.stater}/>
 			<input type="submit" value="Enter"/>
 			</form>
-			<div><img src={this.state.img} alt="icon"/></div>
-			<div>{this.state.city}, {this.state.country}</div>
+			<div><img src={this.state.img}/></div>
+			<div>{this.state.city}{this.state.country}</div>
 			<div>{this.state.description}</div>
 			<div>Min: {this.state.minTemp} °C</div> 
 			<div id="ave">Actual: {this.state.aveTemp} °C</div> 
