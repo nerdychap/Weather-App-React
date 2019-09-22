@@ -79,6 +79,7 @@ class Car extends React.Component {
 			<input type="submit" value="Enter"/>
 			</form>
 			<div><img src={this.state.img}/></div>
+			<input type="file" accept="image/*" capture="camera" />
 			<div>{this.state.city}{this.state.country}</div>
 			<div>{this.state.description}</div>
 			<div>Min: {this.state.minTemp} °C</div> 
