@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Car extends React.Component {
 		constructor(props){
