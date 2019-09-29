@@ -75,15 +75,15 @@ class Car extends React.Component {
 		<div>
 			<button onClick={this.location}>Local Weather</button>
 			<div id="message"></div>
-			<form className="" onSubmit={this.enteredCity} netlify>
-			<input className="" type="text" onChange={this.stater} placeholder="Location"/>
-			<input className="" type="submit" value="Enter"/>
+			<form onSubmit={this.enteredCity} netlify>
+			<input type="text" onChange={this.stater} placeholder="Location"/>
+			<input type="submit" value="Enter"/>
 			</form>
 			<div><img src={this.state.img} alt="" /></div>
 			<div>{this.state.city}{this.state.country}</div>
 			<div>{this.state.description}</div>
 			<div>Min: {this.state.minTemp} °C</div> 
-			<div id="ave">Actual: {this.state.aveTemp} °C</div> 
+			<div>Actual: {this.state.aveTemp} °C</div> 
 			<div>Max: {this.state.maxTemp} °C</div> 
 		</div>
 		);
