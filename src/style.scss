@@ -1,36 +1,40 @@
+@mixin button-mix {
+	border: 2px solid grey;
+	border-radius: 5px;
+	padding: 4px;
+	font-weight: bold;
+}
+@mixin trans-margin{
+	transition: 0.3s;
+	margin: 2px;
+}
+
 body{
 	text-align: center;
 	background-color: lightblue;
 	font-weight: bold;	
 	font-size: 150%;
 }
+
 input[type="text"]{
-	border: 2px solid grey;
-	border-radius: 5px;
-	padding: 4px;
-	font-weight: bold;
+	@include button-mix;
 }
+
 input[type="submit"]{
+	@include button-mix;
+	@include trans-margin();
 	background-color: #48484a;
-	color: white;
-	border: 2px solid grey;
-	border-radius: 5px;
-	padding: 4px;
-	margin: 2px;
 	opacity: 0.8;
-    transition: 0.3s;
-	font-weight: bold;	
+	color: white;
 }
+
 button{
-	border: 2px solid grey;
+	@include button-mix;
+	@include trans-margin;
 	background-color: #ec6e4c;
-	border-radius: 5px;
-	padding: 4px;
-	margin: 2px;
-	opacity: 0.7;
-    transition: 0.3s;
-	font-weight: bold;	
+	opacity: 0.7;	
 }
+
 button:hover, input[type="submit"]:hover{
 	opacity: 1;
 }
