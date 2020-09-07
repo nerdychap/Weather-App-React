@@ -61,7 +61,7 @@ const App = () => {
 		<div className="container">
 			<h1>Weather Forecast</h1>
 			<div className="form">
-				<label htmlFor="location">Enter Location: <input type="text" name="location" id="location" onChange={(e) => { setLocation(e.target.value) }} /></label>
+				<label htmlFor="location">Location: <input type="text" name="location" id="location" onChange={(e) => { setLocation(e.target.value) }} /></label>
 				<button onClick={getWeather}>Enter </button>
 			</div>
 			<section>
