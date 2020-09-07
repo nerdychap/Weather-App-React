@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "mongodb": "^3.3.2",
-    "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "bootstrap": "^4.5.2",
+    "mongodb": "^3.6.1",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-scripts": "3.1.0",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.5"
   },
   "scripts": {
     "start": "react-scripts start",
