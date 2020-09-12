@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.scss';
 import { render } from 'react-dom';
 import ErrorBoundary from './components/ErrorBoundary';
+import Loader from './components/Loader';
 
 const App = () => {
 	const [location, setLocation] = useState("Country");
@@ -48,7 +49,7 @@ const App = () => {
 
 
 	if (!isLoaded) {
-		return <h1>Loading...</h1>
+		return <Loader />
 	}
 	else if (error) {
 		return <h1>{error}</h1>
@@ -59,7 +60,7 @@ const App = () => {
 	return (
 
 		<div className="container">
-			<h1>Weather Forecast</h1>
+			<h1> Weather Forecast</h1>
 			<div className="form">
 				<label htmlFor="location">Location: <input type="text" name="location" id="location" onChange={(e) => { setLocation(e.target.value) }} /></label>
 				<button onClick={getWeather}>Enter </button>
@@ -73,6 +74,7 @@ const App = () => {
 					<div>{temp}</div>
 					<span>{temp_max}</span>
 				</div>
+				<div>°C</div>
 				<h1>{error}</h1>
 			</section>
 		</div>
